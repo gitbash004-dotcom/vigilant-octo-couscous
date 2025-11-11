@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.airflowenv
+**/data_docs/
+reports/
+.ge_store_backend_id
+.DS_Store

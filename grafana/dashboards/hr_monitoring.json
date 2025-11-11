@@ -1,0 +1,53 @@
+{
+  "id": null,
+  "uid": "hr-monitoring",
+  "title": "HR Data Quality & Drift",
+  "tags": ["hr", "monitoring"],
+  "timezone": "browser",
+  "schemaVersion": 37,
+  "version": 1,
+  "refresh": "30s",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Rows ingested (last 24h)",
+      "datasource": "Postgres",
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawSql": "SELECT ingestion_time as time, row_count FROM ingestion_statistics WHERE ingestion_time >= NOW() - INTERVAL '1 day' ORDER BY ingestion_time",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"x": 0, "y": 0, "w": 8, "h": 6}
+    },
+    {
+      "type": "table",
+      "title": "Recent data quality issues",
+      "datasource": "Postgres",
+      "targets": [
+        {
+          "format": "table",
+          "rawSql": "SELECT dqi.issue_type, dqi.severity, dqi.details, ist.file_name, ist.ingestion_time FROM data_quality_issues dqi JOIN ingestion_statistics ist ON ist.id = dqi.statistic_id ORDER BY ist.ingestion_time DESC LIMIT 20",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"x": 8, "y": 0, "w": 16, "h": 12}
+    },
+    {
+      "type": "timeseries",
+      "title": "Prediction volume",
+      "datasource": "Postgres",
+      "targets": [
+        {
+          "format": "time_series",
+          "rawSql": "SELECT date_trunc('hour', created_at) as time, count(*) FROM predictions GROUP BY 1 ORDER BY 1",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"x": 0, "y": 6, "w": 24, "h": 9}
+    }
+  ]
+}

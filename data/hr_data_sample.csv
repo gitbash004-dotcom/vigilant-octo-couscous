@@ -1,0 +1,11 @@
+enrollee_id,city,city_development_index,gender,relevent_experience,enrolled_university,education_level,major_discipline,experience,company_size,company_type,last_new_job,training_hours,target
+1,city_103,0.92,Male,Has relevent experience,Full time,Graduate,STEM,5,50-99,Pvt Ltd,1,36,0
+2,city_40,0.78,Female,No relevent experience,Part time,Graduate,Business Degree,2,100-500,Funded Startup,>4,120,1
+3,city_21,0.85,Other,Has relevent experience,Full time,Masters,STEM,7,10000+,Pvt Ltd,never,48,0
+4,city_115,0.66,Male,No relevent experience,Full time,Graduate,Humanities,0,10/49,NGO,1,60,1
+5,city_162,0.74,Female,Has relevent experience,Part time,Masters,STEM,10,1000-4999,Public Sector,2,24,0
+6,city_67,0.89,Male,Has relevent experience,Full time,Phd,STEM,12,5000-9999,Pvt Ltd,3,40,0
+7,city_103,0.92,Female,No relevent experience,Full time,Graduate,STEM,1,50-99,Pvt Ltd,>4,80,1
+8,city_16,0.71,Male,Has relevent experience,Full time,Graduate,Business Degree,15,100-500,Funded Startup,never,16,0
+9,city_102,0.64,Female,Has relevent experience,Full time,Graduate,STEM,6,<10,Pvt Ltd,1,72,0
+10,city_5,0.55,Other,No relevent experience,Part time,High School,Arts,0,10/49,NGO,>4,150,1
