@@ -1,0 +1,24 @@
+config_version: 3.0
+plugins_directory: plugins/
+expectations_store_name: expectations_store
+validations_store_name: validations_store
+datasource_store_name: datasource_store
+stores:
+  expectations_store:
+    class_name: ExpectationsStore
+    store_backend:
+      class_name: InMemoryStoreBackend
+  validations_store:
+    class_name: ValidationsStore
+    store_backend:
+      class_name: InMemoryStoreBackend
+  datasource_store:
+    class_name: DatasourceStore
+    store_backend:
+      class_name: InMemoryStoreBackend
+  evaluation_parameter_store:
+    class_name: EvaluationParameterStore
+
+data_docs_sites: {}
+anonymous_usage_statistics:
+  enabled: false
